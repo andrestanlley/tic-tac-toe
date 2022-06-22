@@ -1,9 +1,15 @@
-import React from 'react';
+import React from "react";
+import Home from "./pages/home";
+import Router from "./routes";
+import GlobalStyle from "./styles/global";
 
-
-export function App(){
-  return(
+const App = () => {
+  return (
     <div>
+      <GlobalStyle />
+      <Router />
     </div>
   );
-}
+};
+
+export default App;

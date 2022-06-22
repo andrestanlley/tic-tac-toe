@@ -1,22 +1,23 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const MainContent = styled.main`
   display: flex;
-  flex-direction: column;
-  width: 100%;
   align-items: center;
   justify-content: center;
+  width: 100%;
   height: 100vh;
 
   form {
+    img {
+      width: 55%;
+      padding: 2rem;
+    }
     display: flex;
-    justify-content: center;
     flex-direction: column;
+    align-items: center;
     width: 60rem;
     height: 50rem;
+    background: #ebeaea;
+    border-radius: 45px;
   }
-
 `;
-export const Form = styled.form``;
-export const Input = styled.input``;
-export const Button = styled.div``;
