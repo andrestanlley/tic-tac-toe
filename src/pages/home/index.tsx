@@ -1,16 +1,29 @@
-import React from "react";
+import React, { useCallback } from "react";
+import { useNavigate } from "react-router-dom";
 import { Form } from "@unform/web";
-import { Input } from "../../componets/input";
+import { FiUser } from "react-icons/fi";
 import { MainContent } from "./styles";
-import Button from "../../componets/input/button";
+import Input from "../../components/input";
+import Button from "../../components/button";
+
+import logo from "../../assets/tic-tac-toe.png";
 
 const Home = () => {
+  const navigate = useNavigate();
+
+  const navigateToTicTacToe = useCallback(() => {
+    navigate("/dashboard");
+  }, []);
+
   return (
     <MainContent>
-      <Form onSubmit={() => console.log("a fazer")}>
-        <img src="../assets/logo.png" alt="Logo TicTacToe" />
-        <Input name="Name" />
-        <Button buttonType="submit" label="PRESS START" />
+      <Form onSubmit={navigateToTicTacToe}>
+        <img src={logo} alt="Logo fofinho" />
+        <Input name="username" icon={FiUser} placeholder="Insira seu nome" />
+        <Button buttonType="submit" label="START" />
+        <small>
+          Powered By <code>PRESS START</code>
+        </small>
       </Form>
     </MainContent>
   );
